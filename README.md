@@ -1,53 +1,92 @@
-# React + TypeScript + Vite
+# Me Hungy 🍽️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern recipe finder application built with React, TypeScript, and Material UI. Browse recipes, adjust serving sizes, and view detailed cooking instructions with ingredient lists.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Recipe Browser**: Search and select from a collection of recipes
+- **Dynamic Serving Adjustment**: Scale ingredient quantities up or down based on serving size
+- **Detailed Recipe Views**: View ingredients, step-by-step instructions, prep/cook times, and difficulty levels
+- **Material UI Design**: Clean, responsive interface built with Material UI components
+- **Tag-based Organization**: Recipes categorized by cuisine, dietary preferences, and cooking style
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** with TypeScript
+- **Material UI 7** for UI components
+- **Vite** for fast development and building
+- **ESLint** for code quality
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v16 or higher)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repository
+git clone https://github.com/rastylus/me-hungy.git
+
+# Navigate to project directory
+cd me-hungy
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+src/
+├── recipes/
+│   ├── recipes.types.ts      # TypeScript interfaces
+│   ├── recipes.mock.ts       # Mock recipe data
+│   ├── ingredients.mock.ts   # Mock ingredient data
+│   └── RecipeDisplay.tsx     # Recipe display component
+├── App.tsx                   # Main application component
+└── main.tsx                  # Application entry point
+```
+
+## Features in Detail
+
+### Recipe Display
+Each recipe includes:
+- Recipe name and description
+- Preparation and cooking times
+- Difficulty level (easy/medium/hard)
+- Tags for categorization
+- Complete ingredient list with quantities
+- Step-by-step cooking instructions
+
+### Serving Size Adjustment
+- Increase or decrease servings with +/- buttons
+- Direct input for custom serving sizes
+- Automatic scaling of all ingredient quantities
+- Display of original serving size for reference
+
+## License
+
+MIT
+
+---
+
+Built with ❤️ using React + Vite
+
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
