@@ -194,3 +194,4 @@ export function RecipeDisplay({ recipe }: RecipeDisplayProps) {
     </Card>
   );
 }
+

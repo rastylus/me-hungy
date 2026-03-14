@@ -2,66 +2,51 @@ import { useState } from 'react'
 import {
   AppBar,
   Toolbar,
-  TextField,
   Container,
-  MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
   Box,
   Typography,
+  Autocomplete,
+  TextField,
 } from '@mui/material'
 import { mockRecipes } from './recipes/recipes.mock'
 import { RecipeDisplay } from './recipes/RecipeDisplay'
+import type { Recipe } from './recipes/recipes.types'
 import './App.css'
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('')
-  const [selectedRecipeId, setSelectedRecipeId] = useState<number | string>(mockRecipes[0].id)
-
-  const filteredRecipes = mockRecipes.filter((recipe) =>
-    recipe.name.toLowerCase().includes(searchQuery.toLowerCase())
-  )
-
-  const selectedRecipe = mockRecipes.find((recipe) => recipe.id === selectedRecipeId)
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(mockRecipes[0])
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, bgcolor: 'background.paper', minHeight: '100vh' }}>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Me Hungy - Recipe Finder
           </Typography>
-          <TextField
-            placeholder="Search recipes..."
-            variant="outlined"
-            size="small"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            sx={{
-              backgroundColor: 'white',
-              borderRadius: 1,
-              width: 300,
-            }}
-          />
         </Toolbar>
       </AppBar>
 
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-        <FormControl fullWidth sx={{ mb: 3 }}>
-          <InputLabel>Select Recipe</InputLabel>
-          <Select
-            value={selectedRecipeId}
-            label="Select Recipe"
-            onChange={(e) => setSelectedRecipeId(e.target.value as number | string)}
-          >
-            {filteredRecipes.map((recipe) => (
-              <MenuItem key={recipe.id} value={recipe.id}>
-                {recipe.name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <Autocomplete
+          value={selectedRecipe}
+          onChange={(_, newValue) => {
+            setSelectedRecipe(newValue);
+          }}
+          options={mockRecipes}
+          getOptionLabel={(option) => option.name}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Search and select a recipe"
+              placeholder="Type to search or click to browse..."
+            />
+          )}
+          sx={{ mb: 3 }}
+          openOnFocus
+          selectOnFocus
+          clearOnBlur
+          handleHomeEndKeys
+        />
 
         {selectedRecipe && <RecipeDisplay recipe={selectedRecipe} />}
       </Container>
