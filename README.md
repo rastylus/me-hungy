@@ -79,6 +79,36 @@ Each recipe includes:
 - Automatic scaling of all ingredient quantities
 - Display of original serving size for reference
 
+## Roadmap
+
+### Planned Features
+- [ ] Add ability to create and save custom recipes
+- [ ] Implement recipe favorites/bookmarks
+- [ ] Add shopping list generation from recipe ingredients
+- [ ] Filter recipes by dietary restrictions (vegetarian, vegan, gluten-free, etc.)
+- [ ] Add recipe ratings and reviews
+- [ ] Implement recipe categories/collections
+- [ ] Add timer functionality for cooking steps
+- [ ] Support for imperial/metric unit conversion
+- [ ] Add recipe images/photos
+- [ ] Implement recipe sharing functionality
+- [ ] Add dark mode support
+- [ ] Create mobile-responsive design improvements
+- [ ] Add nutritional information per serving
+- [ ] Implement recipe import from URLs
+- [ ] Add multi-language support
+
+### In Progress
+- [ ] None currently
+
+### Completed
+- [x] Basic recipe display with ingredients and steps
+- [x] Search and browse functionality with autocomplete
+- [x] Dynamic serving size adjustment with quantity scaling
+- [x] Recipe metadata (prep time, cook time, difficulty, tags)
+- [x] Material UI integration
+- [x] TypeScript type system for recipes and ingredients
+
 ## License
 
 MIT
@@ -86,27 +116,3 @@ MIT
 ---
 
 Built with ❤️ using React + Vite
-
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
