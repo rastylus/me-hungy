@@ -81,22 +81,33 @@ Each recipe includes:
 
 ## Roadmap
 
+### High Priority Features
+- [ ] **Add recipes manually** - Form to create custom recipes with ingredients and steps
+- [ ] **Ingredient inventory tracking** - Track what ingredients you have on hand with quantities
+- [ ] **Recipe matching by available ingredients** - Filter/suggest recipes based on your pantry
+- [ ] **Missing ingredients list** - Show what you need to buy for a recipe
+- [ ] **Recipe import from URL** - Parse and import recipes from web pages automatically
+  - Extract recipe name, ingredients, instructions
+  - Support common recipe sites (AllRecipes, Food Network, etc.)
+  - Clean/normalize imported data
+
 ### Planned Features
-- [ ] Add ability to create and save custom recipes
-- [ ] Implement recipe favorites/bookmarks
-- [ ] Add shopping list generation from recipe ingredients
+- [ ] Recipe favorites/bookmarks
+- [ ] Shopping list generation from recipe ingredients
 - [ ] Filter recipes by dietary restrictions (vegetarian, vegan, gluten-free, etc.)
-- [ ] Add recipe ratings and reviews
-- [ ] Implement recipe categories/collections
-- [ ] Add timer functionality for cooking steps
+- [ ] Recipe ratings and reviews
+- [ ] Recipe categories/collections
+- [ ] Timer functionality for cooking steps
 - [ ] Support for imperial/metric unit conversion
 - [ ] Add recipe images/photos
-- [ ] Implement recipe sharing functionality
-- [ ] Add dark mode support
-- [ ] Create mobile-responsive design improvements
-- [ ] Add nutritional information per serving
-- [ ] Implement recipe import from URLs
-- [ ] Add multi-language support
+- [ ] Recipe sharing functionality
+- [ ] Dark mode support
+- [ ] Mobile-responsive design improvements
+- [ ] Nutritional information per serving
+- [ ] Multi-language support
+- [ ] Meal planning/calendar
+- [ ] Recipe scaling for meal prep
+- [ ] Export recipes to PDF
 
 ### In Progress
 - [ ] None currently
